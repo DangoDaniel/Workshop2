@@ -116,7 +116,9 @@ public class UserDao {
                     conn.prepareStatement(SELLECT_ALL_USER_QUERY);
             selectAllUsersStatement.executeQuery();
 
-            User[] users = new User[0];
+//            User[] users = new User[0];
+            User[] users = {};
+
 
             try(ResultSet resultSet = selectAllUsersStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -140,7 +142,7 @@ public class UserDao {
 
     private User[] addToArray(User u, User[] users) {
         User[] tmpUsers = Arrays.copyOf(users, users.length + 1); // Tworzymy kopię tablicy powiększoną o 1.
-        tmpUsers[users.length] = u; // Dodajemy obiekt na ostatniej pozycji.
+        tmpUsers[tmpUsers.length-1] = u; // Dodajemy obiekt na ostatniej pozycji.
         return tmpUsers; //
     }
 }

@@ -31,12 +31,12 @@ public class MainDao {
 
     public static void read(int id){
         UserDao userDao = new UserDao();
-        User user = new User();
-        user = userDao.read(id);
-        System.out.println("id: " + user.getId()+
-                " email: "+ user.getEmail()+
-                " username: "+ user.getUserName()+
-                " password: "+ user.getPassword());
+        User userRead = new User();
+        userRead=userDao.read(id);
+        System.out.println("id: " + userRead.getId()+
+                " email: "+ userRead.getEmail()+
+                " username: "+ userRead.getUserName()+
+                " password: "+ userRead.getPassword());
     }
 
     public static void update(int id) {
